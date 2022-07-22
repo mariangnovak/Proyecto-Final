@@ -1,6 +1,7 @@
-# Proyecto "Nombre Ejemplo"
+# Proyecto Final
 
 Team:
+    - Clerici, Mauro	
     - García Novak, Mariano
 
 Tools:
