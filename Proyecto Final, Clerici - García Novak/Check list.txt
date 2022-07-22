@@ -1,1 +1,17 @@
-Mecanicas Incrementales
+//Mecanicas Incrementales
+
+tablero hexagonal, con casillas especiales u obstaculos.
+
+Movimiento de personajes el tablero.
+
+Personajes desbloqueables
+
+Master desbloqueables ( pasvias permanentes para las puiezas de las run. )
+
+Personajes con habilidades activas y pasivas. (grupales o indiduales)
+
+Leveleo por run, incremento de estadisticas (a definir).
+
+
+
+
