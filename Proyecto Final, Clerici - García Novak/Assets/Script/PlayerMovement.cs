@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
-    private float speed = 5f;
+    public float speed = 5f;
+    public float sprint = 1.5f;
     private Vector3 direction;
     private Vector3 playerRotation;
     public Animator animator;
@@ -12,7 +13,7 @@ public class PlayerMovement : MonoBehaviour
 
     void Start()
     {
-        rb = GetComponent<Rigidbody>();
+        //rb = GetComponent<Rigidbody>();
     }
 
     void Update()
@@ -21,6 +22,7 @@ public class PlayerMovement : MonoBehaviour
         MovePlayer();
         RotatePlayer();
         Animate();
+
     }
 
     void GetInput()
@@ -31,7 +33,10 @@ public class PlayerMovement : MonoBehaviour
 
     void MovePlayer()
     {
-        transform.Translate(direction * speed * Time.deltaTime);
+        if (Input.GetKey(KeyCode.LeftShift))
+            transform.Translate(direction.normalized * speed * Time.deltaTime * sprint);
+        else
+            transform.Translate(direction.normalized * speed * Time.deltaTime);
     }
 
     void RotatePlayer()
@@ -56,5 +61,7 @@ public class PlayerMovement : MonoBehaviour
             animator.SetBool("isRunningBackwards", false);
         }
     }
+
+
 }
 
