@@ -7,12 +7,12 @@ public class PlayerMovement : MonoBehaviour
     private float speed = 5f;
     private Vector3 direction;
     private Vector3 playerRotation;
-    public Animator animator;
-    private Rigidbody rb;
+
+    public Vector3 Direction { get => direction; set => direction = value; }
 
     void Start()
     {
-        rb = GetComponent<Rigidbody>();
+
     }
 
     void Update()
@@ -20,7 +20,6 @@ public class PlayerMovement : MonoBehaviour
         GetInput();
         MovePlayer();
         RotatePlayer();
-        Animate();
     }
 
     void GetInput()
@@ -37,24 +36,6 @@ public class PlayerMovement : MonoBehaviour
     void RotatePlayer()
     {
         transform.Rotate(playerRotation);
-    }
-    void Animate()
-    {
-        if (direction.z > 0)
-        {
-            animator.SetBool("isRunningForward", true);
-            animator.SetBool("isRunningBackwards", false);
-        }
-        else if (direction.z < 0)
-        {
-            animator.SetBool("isRunningForward", false);
-            animator.SetBool("isRunningBackwards", true);
-        }
-        else
-        {
-            animator.SetBool("isRunningForward", false);
-            animator.SetBool("isRunningBackwards", false);
-        }
     }
 }
 
