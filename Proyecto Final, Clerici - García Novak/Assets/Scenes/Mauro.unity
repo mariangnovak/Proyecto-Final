@@ -154,7 +154,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 686024798, guid: 7ce1ffd58433fc84299e60b2334e46e8, type: 3}
       propertyPath: speed
-      value: 6
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 686024798, guid: 7ce1ffd58433fc84299e60b2334e46e8, type: 3}
+      propertyPath: sprint
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 686024798, guid: 7ce1ffd58433fc84299e60b2334e46e8, type: 3}
+      propertyPath: sprintDuration
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 686024799, guid: 7ce1ffd58433fc84299e60b2334e46e8, type: 3}
       propertyPath: m_Constraints
