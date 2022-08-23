@@ -170,10 +170,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 77bf6f17a8104744389fc8365fcc7a30, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cmCamera: {fileID: 0}
-  aimTransition: 250
   bullet: {fileID: 5107872679348482621, guid: 0d583bac1d0f371488711b6452d5fc72, type: 3}
-  shootDelay: 0.7
+  shootDelay: 0.5
   timeToShoot: 0
   shootPoint: {fileID: 4512178666246748334}
 --- !u!1001 &2463038263310832524
