@@ -774,6 +774,7 @@ GameObject:
   - component: {fileID: 95980759410839360}
   - component: {fileID: -42277036878349365}
   - component: {fileID: 1935771275585133857}
+  - component: {fileID: 6286406524445244660}
   m_Layer: 0
   m_Name: Polygonal Metalon Purple
   m_TagString: Untagged
@@ -910,6 +911,19 @@ Light:
   m_UseViewFrustumForShadowCasterCull: 1
   m_ShadowRadius: 0
   m_ShadowAngle: 0
+--- !u!114 &6286406524445244660
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1462720695320296}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b8f8ec9db8411b34e9e937546655f649, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 50
 --- !u!1 &1486048802852170
 GameObject:
   m_ObjectHideFlags: 0

@@ -1151,6 +1151,8 @@ GameObject:
   - component: {fileID: -4638149837510920585}
   - component: {fileID: -4725033952934098565}
   - component: {fileID: 1113935201808182031}
+  - component: {fileID: -4694469607524322745}
+  - component: {fileID: 7634238921495139720}
   m_Layer: 0
   m_Name: Polygonal Metalon Green
   m_TagString: Untagged
@@ -1225,7 +1227,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   objetivoTransform: {fileID: 0}
   comportamiento: 0
-  velocidad: 3
+  velocidad: 5
   animator: {fileID: 0}
   velocidadRotacion: 2
 --- !u!136 &-4725033952934098565
@@ -1237,7 +1239,7 @@ CapsuleCollider:
   m_GameObject: {fileID: 1783563462218004}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 0
+  m_Enabled: 1
   m_Radius: 0.75
   m_Height: 3
   m_Direction: 2
@@ -1304,6 +1306,35 @@ Light:
   m_UseViewFrustumForShadowCasterCull: 1
   m_ShadowRadius: 0
   m_ShadowAngle: 0
+--- !u!114 &-4694469607524322745
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1783563462218004}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b8f8ec9db8411b34e9e937546655f649, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 50
+--- !u!54 &7634238921495139720
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1783563462218004}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 126
+  m_CollisionDetection: 1
 --- !u!1 &1804318802084684
 GameObject:
   m_ObjectHideFlags: 0

@@ -29,7 +29,7 @@ public class Spawner : MonoBehaviour
 
     void SpawnearEnemigo()
     {
-        Instantiate(Enemigo,transform.position + offSet,transform.rotation);
+        Instantiate(Enemigo, transform.position + offSet, transform.rotation);
         offSet.z--;
     }
 
