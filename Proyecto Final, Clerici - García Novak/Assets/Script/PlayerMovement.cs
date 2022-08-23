@@ -13,6 +13,10 @@ public class PlayerMovement : MonoBehaviour
     private Vector3 playerRotation;
     public Animator animator;
     private Rigidbody rb;
+    private bool isRunning;
+
+    public Vector3 Direction { get => direction; set => direction = value; }
+    public bool IsRunning { get => isRunning; set => isRunning = value; }
 
     void Start()
     {
@@ -25,7 +29,7 @@ public class PlayerMovement : MonoBehaviour
         GetInput();
         MovePlayer();
         RotatePlayer();
-        Animate();
+        //Animate();
         SprintReset();
     }
 
@@ -43,34 +47,35 @@ public class PlayerMovement : MonoBehaviour
             transform.Translate(direction.normalized * speed * Time.deltaTime);
             sprintActualCooldown = sprintCooldown;
             Invoke("ResetSpeed", sprintDuration);
-
+            isRunning = true;
         }
         else
             transform.Translate(direction.normalized * speed * Time.deltaTime);
+            isRunning =false;
     }
 
     void RotatePlayer()
     {
         transform.Rotate(playerRotation);
     }
-    void Animate()
-    {
-        if (direction.z > 0)
-        {
-            animator.SetBool("isRunningForward", true);
-            animator.SetBool("isRunningBackwards", false);
-        }
-        else if (direction.z < 0)
-        {
-            animator.SetBool("isRunningForward", false);
-            animator.SetBool("isRunningBackwards", true);
-        }
-        else
-        {
-            animator.SetBool("isRunningForward", false);
-            animator.SetBool("isRunningBackwards", false);
-        }
-    }
+    //void Animate()
+    //{
+    //    if (direction.z > 0)
+    //    {
+    //        animator.SetBool("isRunningForward", true);
+    //        animator.SetBool("isRunningBackwards", false);
+    //    }
+    //    else if (direction.z < 0)
+    //    {
+    //        animator.SetBool("isRunningForward", false);
+    //        animator.SetBool("isRunningBackwards", true);
+    //    }
+    //    else
+    //    {
+    //        animator.SetBool("isRunningForward", false);
+    //        animator.SetBool("isRunningBackwards", false);
+    //    }
+    //}
 
     void SprintReset()
     {
