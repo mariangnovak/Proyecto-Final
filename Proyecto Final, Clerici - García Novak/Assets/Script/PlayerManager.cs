@@ -5,11 +5,14 @@ using UnityEngine;
 public class PlayerManager : MonoBehaviour
 {
     public int health = 1;
+    public int damageTaken = 1;
+    public float immunity = 0f;
     int maxHealth;
 
     void Start()
     {
         maxHealth = health;
+
     }
 
     void Update()
@@ -17,6 +20,14 @@ public class PlayerManager : MonoBehaviour
         if (health <= 0)
         {
             Destroy(gameObject);
+        }
+        if (immunity > 0)
+        {
+            immunity -= Time.deltaTime;
+        }
+        if(health <= 0 )
+        {
+            Destroy(this.gameObject);
         }
     }
 
@@ -37,9 +48,10 @@ public class PlayerManager : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision) { 
     
-        if (collision.gameObject.CompareTag("Enemy"))
+        if (collision.gameObject.CompareTag("Enemy") && immunity<=0)
         {
-            Destroy(this.gameObject);
+            Damage(damageTaken);
+            immunity = 1f;
         }
     }
 }
