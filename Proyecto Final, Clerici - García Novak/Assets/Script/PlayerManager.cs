@@ -7,13 +7,11 @@ public class PlayerManager : MonoBehaviour
     public int health = 1;
     int maxHealth;
 
-    // Start is called before the first frame update
     void Start()
     {
         maxHealth = health;
     }
 
-    // Update is called once per frame
     void Update()
     {
         if (health <= 0)
@@ -22,7 +20,7 @@ public class PlayerManager : MonoBehaviour
         }
     }
 
-    void Damage(int value)
+    public void Damage(int value)
     {
         health -= value;
     }
@@ -35,5 +33,13 @@ public class PlayerManager : MonoBehaviour
             health += value;
         else
             health = maxHealth;
+    }
+
+    private void OnCollisionEnter(Collision collision) { 
+    
+        if (collision.gameObject.CompareTag("Enemy"))
+        {
+            Destroy(this.gameObject);
+        }
     }
 }
