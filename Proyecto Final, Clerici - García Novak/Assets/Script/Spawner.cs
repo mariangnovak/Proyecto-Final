@@ -13,18 +13,18 @@ public class Spawner : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-
+        InvokeRepeating("SpawnearEnemigo", 2f,2.5f);
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (cantidadActiva < maximoSimultaneo && cantidadSpawneada <= cantidadMaxima)
-        {
-            Invoke("SpawnearEnemigo",3);
-            cantidadActiva++;
-            cantidadSpawneada++;
-        }
+        //if (cantidadActiva < maximoSimultaneo && cantidadSpawneada <= cantidadMaxima)
+        //{
+            
+        //    cantidadActiva++;
+        //    cantidadSpawneada++;
+        //}
     }
 
     void SpawnearEnemigo()
@@ -32,5 +32,10 @@ public class Spawner : MonoBehaviour
         Instantiate(Enemigo, transform.position + offSet, transform.rotation);
         offSet.z--;
     }
+
+    //public void EnemyDestroyed(int aux)
+    //{
+    //    cantidadActiva--;
+    //}
 
 }
