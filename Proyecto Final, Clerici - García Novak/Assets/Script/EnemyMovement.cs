@@ -40,22 +40,23 @@ public class EnemyMovement : MonoBehaviour
 
     void ChasePlayer()
     {
-        Vector3 direccion = (objetivoTransform.position - transform.position);
-        LookPlayer();
-
-        if (direccion.magnitude >= 2)
+        if (objetivoTransform != null)
         {
-            transform.position += direccion.normalized * velocidad * Time.deltaTime;
-            animator.SetBool("Stab Attack", false);
-            animator.SetBool("Walk Forward", true);
-        }
-        else if (animator.GetBool("Walk Forward"))
-        {
-            animator.SetBool("Walk Forward", false);
-            animator.SetBool("Stab Attack", true);
-        }
+            Vector3 direccion = (objetivoTransform.position - transform.position);
+            LookPlayer();
 
-
+            if (direccion.magnitude >= 2)
+            {
+                transform.position += direccion.normalized * velocidad * Time.deltaTime;
+                animator.SetBool("Stab Attack", false);
+                animator.SetBool("Walk Forward", true);
+            }
+            else if (animator.GetBool("Walk Forward"))
+            {
+                animator.SetBool("Walk Forward", false);
+                animator.SetBool("Stab Attack", true);
+            }
+        }
     }
 
     void LookPlayerLerp()
