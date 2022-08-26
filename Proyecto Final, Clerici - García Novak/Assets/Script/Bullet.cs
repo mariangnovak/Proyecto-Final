@@ -5,11 +5,12 @@ using UnityEngine;
 public class Bullet : MonoBehaviour
 {
     [SerializeField] private float bulletSpeed = 20f;
-    [SerializeField] GameObject enemy;
-
+    //[SerializeField] GameObject enemy;
+    public Spawner spawner;
 
     void Start()
     {
+        spawner = GetComponent<Spawner>();
 
     }
 
